@@ -2,7 +2,6 @@ package com.SpringSecurity.normalthings.models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.UniqueConstraint;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -16,7 +15,7 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode
 @Entity
-public class ModelStudent {
+public class ModelStudent{
 	private String name;
 	private String adress;
 	private String phone;

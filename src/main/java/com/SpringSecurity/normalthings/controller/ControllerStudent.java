@@ -5,14 +5,18 @@ import java.util.List;
 import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.config.annotation.authentication.configurers.provisioning.UserDetailsManagerConfigurer.UserDetailsBuilder;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 //import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.SpringSecurity.normalthings.models.ModelStudent;
@@ -54,6 +58,18 @@ public class ControllerStudent {
 	public String userDetails(@AuthenticationPrincipal UserDetails u) {
 		System.out.println("metodo userdetails"+u);
 		return "Seu user é " + u.toString();
+	}
+	
+	@PostMapping("/")
+	public ResponseEntity<ModelStudent> createStudent(@RequestBody ModelStudent user) {
+		
+		BCryptPasswordEncoder pe = new BCryptPasswordEncoder();
+		
+		user.setPassword(pe.encode(user.getPassword()));
+		
+		RS.save(user);
+		
+		return new ResponseEntity<>(HttpStatus.OK);
 	}
 
 }
