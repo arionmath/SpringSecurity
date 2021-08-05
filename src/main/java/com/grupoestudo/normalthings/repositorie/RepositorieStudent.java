@@ -10,8 +10,8 @@ import com.grupoestudo.normalthings.models.ModelStudent;
 public class RepositorieStudent {
 	
 	public ModelStudent findByName(){
-		
-		return new ModelStudent("Jose Alves", "findById", "8888888");
+		System.out.println("\n===findnamen===\n");
+		return new ModelStudent("Jose Alves Cabral", "findById", "8888888");
 	}
 	
 	public List<ModelStudent> findAll(){
