@@ -1,43 +1,30 @@
 package com.SpringSecurity.normalthings.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.UniqueConstraint;
+
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@EqualsAndHashCode
+@Entity
 public class ModelStudent {
 	private String name;
 	private String adress;
 	private String phone;
+
+	@Id
+	private String username;
+	private String password;
 	
 	
-	public ModelStudent( ) {
-
-	}
 	
-	public ModelStudent(String name, String adress, String phone) {
-		this.name = name;
-		this.adress = adress;
-		this.phone = phone;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getAdress() {
-		return adress;
-	}
-
-	public void setAdress(String adress) {
-		this.adress = adress;
-	}
-
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
 }
