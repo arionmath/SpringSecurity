@@ -34,7 +34,7 @@ public class ControllerStudent {
 	
 	@GetMapping(path = "/one")
 	public ModelStudent findByName() {
-		return RS.findByName();
+		return RS.getById(null);
 	}
 	
 	
