@@ -1,4 +1,4 @@
-package com.grupoestudo.normalthings.models;
+package com.SpringSecurity.normalthings.models;
 
 public class ModelStudent {
 	private String name;

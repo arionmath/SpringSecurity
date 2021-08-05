@@ -1,11 +1,11 @@
-package com.grupoestudo.normalthings.repositorie;
+package com.SpringSecurity.normalthings.repositorie;
 
 import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.grupoestudo.normalthings.models.ModelStudent;
+import com.SpringSecurity.normalthings.models.ModelStudent;
 @Repository
 public class RepositorieStudent {
 	
