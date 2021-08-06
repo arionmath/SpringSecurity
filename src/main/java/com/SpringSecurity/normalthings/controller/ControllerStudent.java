@@ -43,13 +43,13 @@ public class ControllerStudent {
 	
 	
 	@GetMapping(path = "/user")
-	@PreAuthorize("hasRole('user')")
+	@PreAuthorize("hasRole('USER')")
 	public String messageForUser() {
 		return "essa é a mensagem para o usuario user";
 	}
 	
 	@PostMapping(path = "/user/{msg}")
-	@PreAuthorize("hasRole('user')")
+	@PreAuthorize("hasRole('USER')")
 	public String postMessageForUser(@PathVariable String msg) {
 		return "essa é a mensagem do user "+msg;
 	}
